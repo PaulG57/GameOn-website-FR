@@ -14,7 +14,6 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  background-image: url("background.png");
   font-family: var(--font-default);
   font-size: 18px;
   max-width: 1300px;
@@ -199,6 +198,11 @@ input {
   padding: 8px;
   border: 0.8px solid #ccc;
   outline: none;
+}
+.error{
+  color: red;
+  border: 1px solid red;
+  box-shadow: 0 0 10px red;
 }
 .text-control {
   margin: 0;
