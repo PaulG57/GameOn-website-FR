@@ -199,11 +199,6 @@ input {
   border: 0.8px solid #ccc;
   outline: none;
 }
-.error{
-  color: red;
-  border: 1px solid red;
-  box-shadow: 0 0 10px red;
-}
 .text-control {
   margin: 0;
   padding: 8px;
@@ -403,6 +398,19 @@ input[data-error]::after {
 .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
 }
+
+/* message erreur */
+.error{
+  color: red;
+  border: 1px solid red;
+  box-shadow: 0 0 10px red;
+}
+#erreurMessage{
+  color: red;
+  font-size: medium;
+  margin: 15px;
+}
+
 /* custom select end */
 .text-label {
   font-weight: normal;
