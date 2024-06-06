@@ -126,7 +126,7 @@ function successMessage() {
 
   setTimeout(() => {
     successElement.remove();
-  }, 50000);
+  }, 5000);
 
 }
 
