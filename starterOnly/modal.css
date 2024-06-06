@@ -413,16 +413,16 @@ input[data-error]::after {
 
 /* message succes */
 .success-message{
-  width: auto;
+  width: 50%;
   height: 150px;
   background: rgba(0, 2, 14, 0.874);
   position: absolute;
   top: 45%;
-  left: 35%;
+  left: 27%;
   z-index: 99;
   border: 2px solid white;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgb(6, 237, 37);
+  box-shadow: 0 0 20px rgb(6, 237, 37);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -545,6 +545,12 @@ footer {
   .copyrights {
     margin-top: 50px;
     text-align: center;
+  }
+  .success-message{
+    width: 100%;
+    height: 250px;
+    top: 70%;
+    left: 0;
   }
 }
 
