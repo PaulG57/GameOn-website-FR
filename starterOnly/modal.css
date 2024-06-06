@@ -82,6 +82,7 @@ img {
   }
   .topnav img {
     width: 55%;
+    margin-left: 10px;
   }
   .main-navbar {
     display: block;
@@ -530,7 +531,7 @@ footer {
   .hero-content {
     background: #fff;
     color: #000;
-    padding: 20px;
+    padding: 5px;
   }
   .hero-content::after {
     content: unset;
@@ -543,9 +544,9 @@ footer {
     white-space: normal;
   }
   .hero-text {
-    width: 90%;
-    font-size: 13px;
-    padding: 5px;
+    width: 100%;
+    margin-top: 24px;
+    font-size: 1.2rem;
   }
   .hero-img img {
     border-radius: 10px;
