@@ -405,10 +405,29 @@ input[data-error]::after {
   border: 1px solid red;
   box-shadow: 0 0 10px red;
 }
-#erreurMessage{
+.error-message{
   color: red;
   font-size: medium;
   margin: 15px;
+}
+
+/* message succes */
+.success-message{
+  width: auto;
+  height: 150px;
+  background: rgba(0, 2, 14, 0.874);
+  position: absolute;
+  top: 45%;
+  left: 35%;
+  z-index: 99;
+  border: 2px solid white;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgb(6, 237, 37);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: white;
 }
 
 /* custom select end */
