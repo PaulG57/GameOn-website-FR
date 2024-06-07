@@ -8,7 +8,7 @@ function editNav() {
 }
 
 const modalbg = document.querySelector(".bground");
-const modalSuccess = document.querySelector(".hero-section");
+const modalSuccess = document.querySelector(".modal-body");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const closeBtn = document.querySelector(".close");
@@ -117,17 +117,18 @@ function afficherMessageErreur(champ, message) {
 }
 
 function successMessage() {
+  form.style.display = "none";
   const successElement = document.createElement('div');
   successElement.className = 'success-message';
   const succesMessageP = document.createElement('p');
-  succesMessageP.textContent = 'Votre formulaire a bien été envoyé ! Merci :)';
+  const successMessageBtn = document.createElement('button');
+  successMessageBtn.className = 'btn-submit';
+  successMessageBtn.textContent = 'Fermer';
+  succesMessageP.textContent = 'Merci pour votre inscription';
   successElement.appendChild(succesMessageP);
   modalSuccess.appendChild(successElement);
-
-  setTimeout(() => {
-    successElement.remove();
-  }, 50000);
-
+  successElement.appendChild(successMessageBtn);
+  successMessageBtn.addEventListener("click", closeModal);
 }
 
 form.addEventListener("submit", (event) => {
@@ -145,7 +146,6 @@ form.addEventListener("submit", (event) => {
       validerLocation(radioLocation);
       validerConditions(checkboxConditions);
       // Si tout est valide, soumettre le formulaire
-      closeModal();
       successMessage();
   } catch (error) {
       // Afficher le message d'erreur
