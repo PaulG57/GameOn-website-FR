@@ -414,13 +414,10 @@ input[data-error]::after {
 /* message succes */
 .success-message{
   height: 74vh;
-  margin: auto;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 36px;
-  font-weight: 400;
   text-align: center;
 }
 .success-message button {

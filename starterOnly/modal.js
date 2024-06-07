@@ -42,7 +42,7 @@ function closeModal() {
 function validerChamp(champ) {
   if (champ.value.length < 2) {
       champ.classList.add("error");
-      throw { champ, message: `Le ${champ.name} n'est pas valide. (2 caractères minimum)` };
+      throw { champ, message: `Le ${champ.name} n'est pas valide (2 caractères minimum).` };
   }
   champ.classList.remove("error");
   return true;
@@ -61,7 +61,7 @@ function validerEmail(email) {
 function validerDate(date) {
   if (!date.value) {
       date.classList.add("error");
-      throw { champ: date, message: "La date n'est pas valide." };
+      throw { champ: date, message: "Veuillez sélectionner une date." };
   }
   date.classList.remove("error");
   return true;
@@ -71,7 +71,7 @@ function validerNombre(quantity) {
   let regex = new RegExp("^[0-9]+$");
   if (!regex.test(quantity.value)) {
       quantity.classList.add("error");
-      throw { champ: quantity, message: "La quantité n'est pas valide." };
+      throw { champ: quantity, message: "Veuillez indiquer une quantité." };
   }
   quantity.classList.remove("error");
   return true;
@@ -89,7 +89,7 @@ function validerLocation(location) {
 
   if (!selected) {
       divLocation.classList.add("error");
-      throw { champ: divLocation, message: "La location n'est pas valide." };
+      throw { champ: divLocation, message: "Veuillez sélectionner une location." };
   }
   divLocation.classList.remove("error");
   return true;
@@ -98,7 +98,7 @@ function validerLocation(location) {
 function validerConditions(condition) {
   if (!condition.checked) {
       divConditions.classList.add("error");
-      throw { champ: divConditions, message: "La condition n'est pas valide." };
+      throw { champ: divConditions, message: "Veuillez accepter les conditions d'utilisation." };
   }
   divConditions.classList.remove("error");
   return true;
@@ -118,16 +118,14 @@ function afficherMessageErreur(champ, message) {
 
 function successMessage() {
   form.style.display = "none";
-  const successElement = document.createElement('div');
-  successElement.className = 'success-message';
-  const succesMessageP = document.createElement('p');
-  const successMessageBtn = document.createElement('button');
-  successMessageBtn.className = 'btn-submit';
-  successMessageBtn.textContent = 'Fermer';
-  succesMessageP.textContent = 'Merci pour votre inscription';
-  successElement.appendChild(succesMessageP);
-  modalSuccess.appendChild(successElement);
-  successElement.appendChild(successMessageBtn);
+  let divSuccessMessage = `
+    <div class="success-message">
+      <p>Merci pour <br> votre inscription</p>
+      <button id="closeBtn" class="btn-submit">Fermer</button>
+    </div>
+  `;
+  modalSuccess.innerHTML = divSuccessMessage;
+  let successMessageBtn = document.getElementById("closeBtn");
   successMessageBtn.addEventListener("click", closeModal);
 }
 
@@ -145,7 +143,7 @@ form.addEventListener("submit", (event) => {
       validerNombre(champQuantity);
       validerLocation(radioLocation);
       validerConditions(checkboxConditions);
-      // Si tout est valide, soumettre le formulaire
+      // Si tout est valide, afficher le message de success
       successMessage();
   } catch (error) {
       // Afficher le message d'erreur
