@@ -34,7 +34,6 @@ img {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 .header-logo img {
   width: 100%;
@@ -81,11 +80,14 @@ img {
     color: red;
   }
   .topnav img {
-    width: 55%;
+    width: 100%;
     margin-left: 10px;
   }
   .main-navbar {
     display: block;
+  }
+  .header-logo {
+    width: 35%;
   }
 }
 
