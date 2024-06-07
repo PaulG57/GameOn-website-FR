@@ -127,6 +127,17 @@ function successMessage() {
   modalSuccess.innerHTML = divSuccessMessage;
   let successMessageBtn = document.getElementById("closeBtn");
   successMessageBtn.addEventListener("click", closeModal);
+  const successElement = document.createElement('div');
+  successElement.className = 'success-message';
+  const succesMessageP = document.createElement('p');
+  succesMessageP.textContent = 'Votre formulaire a bien été envoyé ! Merci :)';
+  successElement.appendChild(succesMessageP);
+  modalSuccess.appendChild(successElement);
+
+  setTimeout(() => {
+    successElement.remove();
+  }, 5000);
+
 }
 
 form.addEventListener("submit", (event) => {
